@@ -4,7 +4,7 @@
     <!-- Ninjas Available  -->
     <h2>Ninjas Available </h2>
     <input type="text" placeholder="Search Available Ninjas" ng-model="SearchAvailable">
-    <ul>
+    <ul id="ninja-list">
       <li ng-repeat="ninja in ninjas | orderBy: order | filter: SearchAvailable " ng-show="ninja.available">
         <h3>{{ninja.name}} -- {{ninja.rate | currency:'$'}}</h3>
         <div class="remove" ng-click="removeNinja(ninja)">X</div>
@@ -17,4 +17,5 @@
       <input type="text" placeholder="Rate" ng-model='newNinja.rate'/>
       <input type="submit" value="Add new ninja"/>
     </form>
+    <a href="" ng-click='removeAll()'>Remove all Ninjas</a>
 </div>
